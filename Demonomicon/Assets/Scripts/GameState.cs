@@ -20,7 +20,7 @@ public class GameState : MonoBehaviour {
 	
 	}
 
-	void NewGame(){
+	public void NewGame(){
 		//loads map
 		SceneManager.LoadScene(1);
 	}
