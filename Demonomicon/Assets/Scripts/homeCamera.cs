@@ -25,18 +25,18 @@ public class homeCamera : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		currentLerpTime += Time.deltaTime / 2;
+		currentLerpTime += Time.deltaTime;
 		if (clicked) {
 			if (!onlyOnce) {
 				onlyOnce = true;
 				currentLerpTime = 0;
 			}
-			GetComponent<Camera>().orthographicSize = Mathf.SmoothStep( targetSize, currentSize, currentLerpTime*2);
+			GetComponent<Camera>().orthographicSize = Mathf.SmoothStep( targetSize, currentSize, currentLerpTime);
 		} else {
-			GetComponent<Camera>().orthographicSize = Mathf.SmoothStep( currentSize, targetSize, currentLerpTime);
+			GetComponent<Camera>().orthographicSize = Mathf.SmoothStep( currentSize, targetSize, currentLerpTime * 0.4f);
 			transform.position = new Vector3(
-									Mathf.SmoothStep( currentPosition.x, target.x, currentLerpTime),
-									Mathf.SmoothStep( currentPosition.y, target.y, currentLerpTime),
+									Mathf.SmoothStep( currentPosition.x, target.x, currentLerpTime * 0.4f),
+									Mathf.SmoothStep( currentPosition.y, target.y, currentLerpTime * 0.4f),
 									-10);
 		}
 	}
