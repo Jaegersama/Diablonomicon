@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 public class MapNode : MonoBehaviour {
 
 	public int NodeValue = 0; //currently used for (bad) pathfinding
-	public AudioSource hoverSound;
-
 	public Vector2 location;
 	// Use this for initialization
 	void Start () {
@@ -22,10 +20,4 @@ public class MapNode : MonoBehaviour {
 			SceneManager.LoadScene(2);
 		}
 	}
-
-	void OnMouseOver() {
-        //hoverSound.play();
-    }
-
-
 }

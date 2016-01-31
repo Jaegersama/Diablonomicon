@@ -33,7 +33,7 @@ public class GameState : MonoBehaviour {
 				t += Time.deltaTime;
 			} else if (loadingSomething == false) {
 				loadingSomething = true;
-				SceneManager.LoadScene(1);
+				SceneManager.LoadScene(3);
 				t = 0;
 			}
 			if (loadingSomething) {

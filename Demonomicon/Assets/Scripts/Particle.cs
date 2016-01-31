@@ -16,6 +16,7 @@ public class Particle : MonoBehaviour {
 
 		int n = Random.Range(0,7);
 		GetComponent<SpriteRenderer>().sprite = images[n];
+		GetComponent<SpriteRenderer>().color = new Color(48/255.0f,94/255.0f,144/255.0f);
 
 		speed = Random.Range(0.2f,1.0f);
 		baseSpeed = speed;
@@ -35,8 +36,6 @@ public class Particle : MonoBehaviour {
         Quaternion target = Quaternion.Euler(0, Input.GetAxis("Horizontal") * pitch, 0);
         transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * 1.0F);
 
-		GetComponent<SpriteRenderer>().color = new Color(92/255.0F,109/255.0F,173/255.0F,255/255.0F);
-
 		int inset = 3;
 		Vector3 screenPoint = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x,transform.position.y,Camera.main.farClipPlane/2));
 		if  (screenPoint.x > Screen.width + inset + 1) {
@@ -50,3 +49,4 @@ public class Particle : MonoBehaviour {
 
 	}
 }
+//GetComponent<SpriteRenderer>().color = new Color(92/255.0F,109/255.0F,173/255.0F,255/255.0F);
