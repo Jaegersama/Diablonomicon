@@ -9,7 +9,6 @@ public class Ember : MonoBehaviour {
 	public float baseSpeed;
 	public float basePitch;
 	private float accumulator;
-	private int toggle = 1;
 
 	void Start () {
 		Vector2 startPosition = Camera.main.ScreenToWorldPoint(new Vector3(Random.Range(0,Screen.width), Random.Range(0,Screen.height), Camera.main.farClipPlane/2));
@@ -18,7 +17,7 @@ public class Ember : MonoBehaviour {
 		int n = Random.Range(0,7);
 		GetComponent<SpriteRenderer>().sprite = images[n];
 
-		speed = Random.Range(4.0f,12.0f);
+		speed = Random.Range(2.0f,6.0f);
 		baseSpeed = speed;
 		accumulator = 0;
 		basePitch = 0;
@@ -31,27 +30,23 @@ public class Ember : MonoBehaviour {
 	}
 	
 	void FixedUpdate () {
-		toggle += 1;
+		accumulator = accumulator + Time.deltaTime;
+		speed = baseSpeed - (Mathf.Sin(accumulator) * 10) * Time.deltaTime;
+		pitch = basePitch - (Mathf.Cos(accumulator) + Mathf.Sin( accumulator * 0.8f )) * Time.deltaTime;
 
-		if (toggle == 3) {
-			toggle = 1;
-			accumulator = accumulator + Time.deltaTime;
-			speed = baseSpeed - (Mathf.Sin(accumulator) * 10) * Time.deltaTime;
-			pitch = basePitch - (Mathf.Cos(accumulator) + Mathf.Sin( accumulator * 0.8f )) * Time.deltaTime;
+		Vector2 newPosition = transform.position;
+		transform.position = newPosition + new Vector2((speed + pitch) * Time.deltaTime, speed/3 * Time.deltaTime);
 
-			Vector2 newPosition = transform.position;
-			transform.position = newPosition + new Vector2((speed + pitch) * Time.deltaTime, speed/3 * Time.deltaTime);
-
-			int inset = 3;
-			Vector3 screenPoint = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x,transform.position.y,Camera.main.farClipPlane/2));
-			if  (screenPoint.x > Screen.width + inset + 1) {
-				Vector2 position = Camera.main.ScreenToWorldPoint(new Vector3(-inset, transform.position.y, Camera.main.farClipPlane/2));
-				transform.position = new Vector2(position.x,transform.position.y);	
-			}
-			if (screenPoint.y >  Screen.height + inset + 1) {
-				Vector2 position = Camera.main.ScreenToWorldPoint(new Vector3(transform.position.x, -inset, Camera.main.farClipPlane/2));
-				transform.position = new Vector2(transform.position.x,position.y);	
-			}
+		int inset = 3;
+		Vector3 screenPoint = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x,transform.position.y,Camera.main.farClipPlane/2));
+		if  (screenPoint.x > Screen.width + inset + 1) {
+			Vector2 position = Camera.main.ScreenToWorldPoint(new Vector3(-inset, transform.position.y, Camera.main.farClipPlane/2));
+			transform.position = new Vector2(position.x,transform.position.y);	
 		}
+		if (screenPoint.y >  Screen.height + inset + 1) {
+			Vector2 position = Camera.main.ScreenToWorldPoint(new Vector3(transform.position.x, -inset, Camera.main.farClipPlane/2));
+			transform.position = new Vector2(transform.position.x,position.y);	
+		}
+	
 	}
 }

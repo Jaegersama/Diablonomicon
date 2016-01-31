@@ -6,8 +6,10 @@ public class GameState : MonoBehaviour {
 	static public PlayerData player;
 	static public player mapInfo;
     public Color lerpedColor = new Color(0,0,0,0);
+    public float lerpedVolume = 1;
 	public bool buttonClicked = false;
     public Renderer rend;
+    public AudioSource music;
 
 	private float t = 0;
 	private bool loadingSomething = false;
@@ -38,6 +40,8 @@ public class GameState : MonoBehaviour {
 				lerpedColor = Color.Lerp(new Color(0,0,0,1), new Color(0,0,0,0), t);
 			} else {
 				lerpedColor = Color.Lerp(new Color(0,0,0,0), new Color(0,0,0,1), t);
+				lerpedVolume = Mathf.Lerp(1,0, t);
+				music.volume = lerpedVolume;
 			}
 			rend.material.color = lerpedColor;
 		}
