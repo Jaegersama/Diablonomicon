@@ -16,6 +16,8 @@ public class overmapStateHandler : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		loadingSomething = false;
+		buttonClicked = false;
 		rend = GetComponent<Renderer>();
 		rend.material.color = new Color(0,0,0,0);
 		rend.material.shader = Shader.Find( "Transparent/Diffuse" );

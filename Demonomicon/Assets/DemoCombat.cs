@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class DemoCombat : MonoBehaviour {
 
@@ -13,7 +14,7 @@ public class DemoCombat : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		
 	}
 	
 	// Update is called once per frame
@@ -39,8 +40,13 @@ public class DemoCombat : MonoBehaviour {
 		HP += change;
 		if (HP <= 0) {
 			Destroy (gameObject);
+
+			GameObject overmapState = GameObject.FindWithTag("State2");
+			Destroy (overmapState);
+			
+			SceneManager.LoadScene(1);
 		}
-		}
+	}
 
 	public void TurnChange(){
 		turnSelect = 1;
