@@ -11,6 +11,9 @@ public class Battle : MonoBehaviour {
 	public GameObject playerPos;
 	public GameObject enemyPos;
 	public GameObject allyPos;
+	public int gestures = 0;
+	public GameObject gestureSelect;
+	public GameObject gestureMenu;
 
 	// Use this for initialization
 	void Start () {
@@ -43,5 +46,8 @@ public class Battle : MonoBehaviour {
 		//subtract from hp
 		//if(hp<=0){next fighter, if next fighter = null, EndBattle}
 		//adjust temperment, check for betrayel
+	}
+	public void ChangeGestures(int change){
+		gestures += change;
 	}
 } 
