@@ -10,6 +10,11 @@ public class Ember : MonoBehaviour {
 	public float basePitch;
 	private float accumulator;
 
+	public bool customColor = false;
+	public Color particleColor;
+	public bool customScale = false;
+	public float scaleOverride;
+
 	void Start () {
 		Vector2 startPosition = Camera.main.ScreenToWorldPoint(new Vector3(Random.Range(0,Screen.width), Random.Range(0,Screen.height), Camera.main.farClipPlane/2));
 		transform.position = startPosition;
@@ -24,9 +29,17 @@ public class Ember : MonoBehaviour {
 		pitch = 0;
 
 		float scale = Random.Range(2.0f,3.5f);
-		Vector2 s = new Vector2(scale,scale);
+		Vector2 s;
+		if (customScale) {
+			s = new Vector2(scaleOverride,scaleOverride);
+		} else {
+			s = new Vector2(scale,scale);
+		}
 		transform.localScale = s;
 		GetComponent<SpriteRenderer>().color = new Color(220/255.0F,95/255.0F,65/255.0F,67/255.0F);
+		if (customColor) {
+			GetComponent<SpriteRenderer>().color = particleColor;
+		}
 	}
 	
 	void FixedUpdate () {
