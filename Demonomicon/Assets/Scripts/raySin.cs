@@ -18,8 +18,4 @@ public class raySin : MonoBehaviour {
 		lerpedColor = Color.Lerp( new Color(92/255.0F,109/255.0F,173/255.0F,0.25f), new Color(92/255.0F,109/255.0F,173/255.0F,0.4F), Mathf.PingPong(t/2, 1.0f) );
 		rend.color = lerpedColor;
 	}
-
-	void OnMouseEnter () {
-		Debug.Log("HM!");
-	}
 }

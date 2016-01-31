@@ -50,15 +50,6 @@ public class MapNode : MonoBehaviour {
 		lerpedColor += Color.Lerp( new Color(1,1,1,0.05f), new Color(1,1,1,0.2f), Mathf.PingPong(t*3, 1.0f) );	
 		rend.color = lerpedColor;	
 	}
-		
-	 void OnTriggerEnter(Collider other){
-		Debug.Log ("Triggered");
-		//load battle or event from here
-		if(other.tag == "Battle"){
-			GameState.mapInfo.target = location;
-			SceneManager.LoadScene(2);
-		}
-	}
 
 	void OnMouseEnter () {
 		if (!selected) {
@@ -76,6 +67,9 @@ public class MapNode : MonoBehaviour {
 	void OnMouseOver () {
 		if(Input.GetMouseButtonDown(0)) {
 			selected = true;
+
+			GameObject overmapState = GameObject.FindWithTag("State2");
+			overmapState.GetComponent<overmapStateHandler>().buttonClicked = true;
 		}
 	}
 
