@@ -10,6 +10,9 @@ public class Particle : MonoBehaviour {
 	public float basePitch;
 	private float accumulator;
 
+	public bool customColor = false;
+	public Color particleColor;
+
 	void Start () {
 		Vector2 startPosition = Camera.main.ScreenToWorldPoint(new Vector3(Random.Range(0,Screen.width), Random.Range(0,Screen.height), Camera.main.farClipPlane/2));
 		transform.position = startPosition;
@@ -17,6 +20,9 @@ public class Particle : MonoBehaviour {
 		int n = Random.Range(0,7);
 		GetComponent<SpriteRenderer>().sprite = images[n];
 		GetComponent<SpriteRenderer>().color = new Color(48/255.0f,94/255.0f,144/255.0f);
+		if (customColor) {
+			GetComponent<SpriteRenderer>().color = particleColor;
+		}
 
 		speed = Random.Range(0.2f,1.0f);
 		baseSpeed = speed;
