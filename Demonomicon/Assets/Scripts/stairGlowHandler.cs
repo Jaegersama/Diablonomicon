@@ -45,6 +45,9 @@ public class stairGlowHandler : MonoBehaviour {
 			clicked = true;
 			GameObject player = GameObject.FindWithTag("Player");
 			player.GetComponent<homeSummonerHandler>().clicked = true;
+
+			GameObject camera = GameObject.FindWithTag("MainCamera");
+			camera.GetComponent<homeCamera>().clicked = true;
 		}
 	}
 
