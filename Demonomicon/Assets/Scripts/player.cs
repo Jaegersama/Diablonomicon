@@ -10,7 +10,7 @@ public class player:MonoBehaviour{
 	public int currentNode = 0;
 	public int distance;
 	//Vector2 that click/press will be saved in
-	private Vector2 target;
+	public Vector2 target;
 	//used to save data from clicked node
 	MapNode checknode;
 

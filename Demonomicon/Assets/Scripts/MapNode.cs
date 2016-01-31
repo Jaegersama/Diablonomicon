@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class MapNode : MonoBehaviour {
 
@@ -11,9 +12,13 @@ public class MapNode : MonoBehaviour {
 		location = transform.position;
 	}
 		
-	void OnTriggerEnter(Collider other){
+	 void OnTriggerEnter(Collider other){
 		Debug.Log ("Triggered");
 		//load battle or event from here
+		if(other.tag == "Battle"){
+			GameState.mapInfo.target = location;
+			SceneManager.LoadScene(2);
+		}
 	}
 
 }
