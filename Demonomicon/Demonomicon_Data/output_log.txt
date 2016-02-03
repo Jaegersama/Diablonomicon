@@ -1,0 +1,99 @@
+Initialize engine version: 5.3.2f1 (e87ab445ead0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics 520 (ID=0x1916)
+    Vendor:   Intel
+    VRAM:     2111 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Bryan\Downloads\Demonomicon-source\Demonomicon\Demonomicon_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Bryan\Downloads\Demonomicon-source\Demonomicon\Demonomicon_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Bryan\Downloads\Demonomicon-source\Demonomicon\Demonomicon_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Bryan\Downloads\Demonomicon-source\Demonomicon\Demonomicon_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Bryan\Downloads\Demonomicon-source\Demonomicon\Demonomicon_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Bryan\Downloads\Demonomicon-source\Demonomicon\Demonomicon_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Bryan\Downloads\Demonomicon-source\Demonomicon\Demonomicon_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Bryan\Downloads\Demonomicon-source\Demonomicon\Demonomicon_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Bryan\Downloads\Demonomicon-source\Demonomicon\Demonomicon_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Bryan\Downloads\Demonomicon-source\Demonomicon\Demonomicon_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Bryan\Downloads\Demonomicon-source\Demonomicon\Demonomicon_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Bryan\Downloads\Demonomicon-source\Demonomicon\Demonomicon_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.061 seconds
+Platform assembly: C:\Users\Bryan\Downloads\Demonomicon-source\Demonomicon\Demonomicon_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Bryan\Downloads\Demonomicon-source\Demonomicon\Demonomicon_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.673706 ms
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Material:Internal_CreateWithShader (UnityEngine.Material,UnityEngine.Shader)
+  at UnityEngine.Material..ctor (UnityEngine.Shader shader) [0x00000] in <filename unknown>:0 
+  at cometHandler.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.633709 ms
+
+Unloading 92 unused Assets to reduce memory usage. Loaded Objects now: 295.
+Total: 0.432640 ms (FindLiveObjects: 0.028160 ms CreateObjectMapping: 0.021333 ms MarkObjects: 0.171520 ms  DeleteObjects: 0.210346 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.548693 ms
+
+Unloading 44 unused Assets to reduce memory usage. Loaded Objects now: 333.
+Total: 0.325120 ms (FindLiveObjects: 0.022613 ms CreateObjectMapping: 0.017920 ms MarkObjects: 0.207786 ms  DeleteObjects: 0.075520 ms)
+
+HM!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+HM!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.553386 ms
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 416.
+Total: 0.320426 ms (FindLiveObjects: 0.027733 ms CreateObjectMapping: 0.018346 ms MarkObjects: 0.206933 ms  DeleteObjects: 0.066133 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at GestureButton.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at GestureButton.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at GestureButton.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.681813 ms
+
+Unloading 93 unused Assets to reduce memory usage. Loaded Objects now: 336.
+Total: 0.527786 ms (FindLiveObjects: 0.036266 ms CreateObjectMapping: 0.026453 ms MarkObjects: 0.258986 ms  DeleteObjects: 0.205226 ms)
+
+HM!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+HM!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.558933 ms
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 416.
+Total: 0.442453 ms (FindLiveObjects: 0.046506 ms CreateObjectMapping: 0.034133 ms MarkObjects: 0.290133 ms  DeleteObjects: 0.070826 ms)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 263c -> priority: 1 

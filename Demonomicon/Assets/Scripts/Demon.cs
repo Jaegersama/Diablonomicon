@@ -12,6 +12,7 @@ public class Demon {
 
 	// generated from BodyPart's
 	public int hp;
+	public int maxHp;
 	public int offense;
 	public int defense;
 	public float temperament;
@@ -43,7 +44,7 @@ public class Demon {
 			appendages.defense + decor.defense;
 		//TODO: same for other attributes, including flesh/iron/ice
 		//...
-
+		maxHp = hp;
 		flight = head.flight || body.flight || legs.flight || 
 			appendages.flight || decor.flight;
 		sight = head.sight || body.sight || legs.sight || 
